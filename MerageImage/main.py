@@ -2,12 +2,15 @@ from PIL import Image
 import os
 import glob
 import shutil
+import sys 
+import io 
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 def merge_images(offset=0):
     """ 支持多格式图片输入 """
     # 常量定义
-    INPUT_DIR = './originImg'
-    OUTPUT_DIR = './export'
+    INPUT_DIR = 'MerageImage/originImg'
+    OUTPUT_DIR = 'MerageImage/export'
     VALID_SIZES = {(512, 910), (512, 725)}
     SUPPORTED_EXTS = ('.png', '.jpg', '.jpeg')  # 新增支持的扩展名
     
